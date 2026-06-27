@@ -1,26 +1,30 @@
-
-*{box-sizing:border-box}
-body{margin:0;font-family:Inter,sans-serif;color:#333;line-height:1.6}
-.navbar{display:flex;justify-content:space-between;align-items:center;padding:15px 8%;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.08);position:sticky;top:0}
-.brand img{height:80px}
-.menu{display:flex;list-style:none;gap:30px}
-.menu a{text-decoration:none;color:#222;font-weight:600}
-.hero{background:linear-gradient(135deg,#0d3b66,#1d6996);color:white;padding:120px 10%;text-align:center}
-.hero h1{font-size:3rem;margin-bottom:10px}
-.hero h2{font-size:2rem;font-weight:400}
-.btn{display:inline-block;margin-top:20px;padding:14px 28px;background:#fff;color:#0d3b66;text-decoration:none;border-radius:6px;font-weight:700}
-.section{padding:80px 10%}
-.section h2{text-align:center;margin-bottom:40px}
-.gray{background:#f5f7fa}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-.card{background:white;padding:30px;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,.08);text-align:center}
-.contact-form{max-width:700px;margin:auto;display:grid;gap:15px}
-.contact-form input,.contact-form textarea{padding:14px;border:1px solid #ccc;border-radius:6px}
-.contact-form button{padding:14px;background:#0d3b66;color:white;border:none;border-radius:6px;font-size:1rem}
-footer{background:#222;color:white;text-align:center;padding:40px 20px}
-footer a{color:#fff}
-@media(max-width:768px){
-.navbar{flex-direction:column}
-.menu{padding-left:0;flex-wrap:wrap;justify-content:center}
-.hero h1{font-size:2.2rem}
-}
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services | Lopalm Technologies, LLC</title><meta name="description" content="Lopalm Technologies provides IT strategy, cybersecurity, cloud, software development, compliance, and healthcare interoperability consulting.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head><body>
+<header class="site-header"><div class="container navbar">
+<a class="logo" href="index.html"><img src="assets/logo.png" alt="Lopalm Technologies, LLC logo"></a>
+<nav><ul class="nav-menu">
+<li><a href="index.html">Home</a></li>
+<li><a href="services.html" class="active">Services</a></li>
+<li><a href="industries.html">Industries</a></li>
+<li><a href="about.html">About</a></li>
+<li><a class="nav-cta" href="contact.html">Contact</a></li>
+</ul></nav></div></header>
+<main><section class="page-hero"><div class="container"><h1>Services</h1><p>Business-focused IT consulting services that help organizations plan, execute, secure, and optimize technology initiatives.</p></div></section><section class="section"><div class="container grid three">
+<article class="card"><div class="icon">📌</div><h3>IT Strategy & Governance</h3><p>Technology roadmaps, governance models, prioritization, and alignment between IT and business goals.</p></article>
+<article class="card"><div class="icon">📋</div><h3>Project Management</h3><p>Leadership for complex initiatives, stakeholder coordination, delivery planning, and risk tracking.</p></article>
+<article class="card"><div class="icon">💻</div><h3>Software Development</h3><p>Modern application design and delivery using Agile, Scrum, DevOps, and scalable engineering practices.</p></article>
+<article class="card"><div class="icon">☁️</div><h3>Cloud Migration</h3><p>AWS and Azure readiness, planning, migration support, modernization, and cloud governance.</p></article>
+<article class="card"><div class="icon">🛠️</div><h3>IT Service Management</h3><p>Operational process improvement, support models, and technology operations alignment.</p></article>
+<article class="card"><div class="icon">🔐</div><h3>Cybersecurity</h3><p>Security strategy, control evaluation, policy support, and practical risk reduction initiatives.</p></article>
+<article class="card"><div class="icon">⚖️</div><h3>Compliance & Risk Controls</h3><p>Compliance readiness, control documentation, governance support, and risk-based decision-making.</p></article>
+<article class="card"><div class="icon">🏥</div><h3>HIPAA, EDI & Interoperability</h3><p>Healthcare consulting for HIPAA, EDI transactions, integration, interoperability, and workflows.</p></article>
+<article class="card"><div class="icon">🚀</div><h3>Digital Transformation</h3><p>Modernization support connecting business objectives, platforms, people, process, and outcomes.</p></article>
+</div></section></main>
+<footer class="site-footer"><div class="container footer-grid"><div>
+<strong>Lopalm Technologies, LLC</strong>
+<p>Strategy that delivers. Business-aligned IT leadership, delivery, security, cloud, and healthcare technology consulting.</p>
+<p>© 2026 Lopalm Technologies, LLC. All rights reserved.</p></div><div>
+<strong>Contact</strong><p>301 S McDowell Street, Ste 125-2039<br>Charlotte, NC 28204<br>
+<a href="mailto:elopez@lopalm.com">elopez@lopalm.com</a><br><a href="tel:+19807853583">980-785-3583</a></p>
+<div class="social-links"><a href="#">Facebook</a><a href="#">X/Twitter</a><a href="#">LinkedIn</a></div></div></div></footer></body></html>
