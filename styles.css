@@ -1,9 +1,9 @@
 
 :root{
-  --primary:#1f4e79;
+  --primary:#2E5F91;
   --primary-dark:#163a5c;
-  --accent:#2f7fb7;
-  --accent-light:#eaf4fb;
+  --accent:#63A96A;
+  --accent-light:#B5DE71;
   --gold:#c8a14a;
   --light:#f7f9fc;
   --text:#263238;
@@ -19,7 +19,7 @@ a{color:var(--primary)}
 
 .site-header{background:rgba(255,255,255,.97);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10;backdrop-filter:blur(10px)}
 .navbar{min-height:92px;display:flex;justify-content:space-between;align-items:center;gap:24px}
-.logo img{height:82px;max-width:260px;display:block;object-fit:contain}
+.logo img{height:120px;max-width:380px;width: auto;}
 .nav-menu{display:flex;list-style:none;padding:0;margin:0;gap:24px;align-items:center;flex-wrap:nowrap}
 .nav-menu a{text-decoration:none;color:var(--text);font-weight:700;font-size:.95rem;white-space:nowrap}
 .nav-menu a.active,.nav-menu a:hover{color:var(--accent)}
@@ -37,6 +37,7 @@ a{color:var(--primary)}
 .btn.secondary{color:#fff;border-color:rgba(255,255,255,.7)}
 
 .section{padding:82px 0}
+.section .eyebrow {color: var(--primary);}
 .light{background:var(--light)}
 .section-header{max-width:780px;margin:0 auto 42px;text-align:center}
 .section-header h2{font-size:clamp(2rem,4vw,3rem);line-height:1.15;margin:0 0 14px}
@@ -75,7 +76,7 @@ a{color:var(--primary)}
   .hero-grid,.split,.footer-grid{grid-template-columns:1fr}
   .three,.four{grid-template-columns:1fr 1fr}
   .navbar{min-height:auto;display:block;padding:12px 0}
-  .logo img{height:64px;max-width:220px;margin:0 auto 8px}
+  .logo img{height:90px;max-width:280px;}
   .nav-menu{justify-content:center;gap:10px;flex-wrap:wrap}
   .nav-menu a{font-size:.88rem;padding:6px 8px}
   .nav-cta{padding:6px 12px}
