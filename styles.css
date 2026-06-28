@@ -1,30 +1,11 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Services | Lopalm Technologies, LLC</title><meta name="description" content="Lopalm Technologies provides IT strategy, cybersecurity, cloud, software development, compliance, and healthcare interoperability consulting.">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head><body>
-<header class="site-header"><div class="container navbar">
-<a class="logo" href="index.html"><img src="assets/logo.png" alt="Lopalm Technologies, LLC logo"></a>
-<nav><ul class="nav-menu">
-<li><a href="index.html">Home</a></li>
-<li><a href="services.html" class="active">Services</a></li>
-<li><a href="industries.html">Industries</a></li>
-<li><a href="about.html">About</a></li>
-<li><a class="nav-cta" href="contact.html">Contact</a></li>
-</ul></nav></div></header>
-<main><section class="page-hero"><div class="container"><h1>Services</h1><p>Business-focused IT consulting services that help organizations plan, execute, secure, and optimize technology initiatives.</p></div></section><section class="section"><div class="container grid three">
-<article class="card"><div class="icon">📌</div><h3>IT Strategy & Governance</h3><p>Technology roadmaps, governance models, prioritization, and alignment between IT and business goals.</p></article>
-<article class="card"><div class="icon">📋</div><h3>Project Management</h3><p>Leadership for complex initiatives, stakeholder coordination, delivery planning, and risk tracking.</p></article>
-<article class="card"><div class="icon">💻</div><h3>Software Development</h3><p>Modern application design and delivery using Agile, Scrum, DevOps, and scalable engineering practices.</p></article>
-<article class="card"><div class="icon">☁️</div><h3>Cloud Migration</h3><p>AWS and Azure readiness, planning, migration support, modernization, and cloud governance.</p></article>
-<article class="card"><div class="icon">🛠️</div><h3>IT Service Management</h3><p>Operational process improvement, support models, and technology operations alignment.</p></article>
-<article class="card"><div class="icon">🔐</div><h3>Cybersecurity</h3><p>Security strategy, control evaluation, policy support, and practical risk reduction initiatives.</p></article>
-<article class="card"><div class="icon">⚖️</div><h3>Compliance & Risk Controls</h3><p>Compliance readiness, control documentation, governance support, and risk-based decision-making.</p></article>
-<article class="card"><div class="icon">🏥</div><h3>HIPAA, EDI & Interoperability</h3><p>Healthcare consulting for HIPAA, EDI transactions, integration, interoperability, and workflows.</p></article>
-<article class="card"><div class="icon">🚀</div><h3>Digital Transformation</h3><p>Modernization support connecting business objectives, platforms, people, process, and outcomes.</p></article>
-</div></section></main>
-<footer class="site-footer"><div class="container footer-grid"><div>
-<strong>Lopalm Technologies, LLC</strong>
-<p>Strategy that delivers. Business-aligned IT leadership, delivery, security, cloud, and healthcare technology consulting.</p>
-<p>© 2026 Lopalm Technologies, LLC. All rights reserved.</p></div><div>
-<strong>Contact</strong><p>301 S McDowell Street, Ste 125-2039<br>Charlotte, NC 28204<br>
-<a href="mailto:elopez@lopalm.com">elopez@lopalm.com</a><br><a href="tel:+19807853583">980-785-3583</a></p>
-<div class="social-links"><a href="#">Facebook</a><a href="#">X/Twitter</a><a href="#">LinkedIn</a></div></div></div></footer></body></html>
+
+:root{--primary:#0d3b66;--dark:#082844;--accent:#1d6996;--light:#f6f8fb;--text:#263238;--muted:#60717c;--border:#dfe7ee;--white:#fff}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Arial,sans-serif;color:var(--text);line-height:1.65}a{color:var(--primary)}.container{width:min(1120px,90%);margin:auto}
+.site-header{background:rgba(255,255,255,.96);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10}.navbar{min-height:86px;display:flex;justify-content:space-between;align-items:center;gap:24px}.logo img{height:70px}.nav-menu{display:flex;list-style:none;padding:0;margin:0;gap:26px;flex-wrap:wrap}.nav-menu a{text-decoration:none;color:var(--text);font-weight:700}.nav-menu a.active,.nav-menu a:hover{color:var(--accent)}.nav-cta{background:var(--primary);color:#fff!important;padding:10px 16px;border-radius:999px}
+.hero{color:#fff;background:linear-gradient(135deg,rgba(8,40,68,.95),rgba(29,105,150,.82)),radial-gradient(circle at 15% 20%,rgba(255,255,255,.22),transparent 25%);padding:110px 0}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}.eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:.78rem;font-weight:800;color:#d7eef8}.hero h1{font-size:clamp(2.5rem,6vw,4.9rem);line-height:1.05;margin:12px 0 22px}.hero p{font-size:1.22rem;max-width:680px}.hero-card{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.24);border-radius:24px;padding:28px}.button-row{display:flex;gap:14px;flex-wrap:wrap}.btn{display:inline-block;text-decoration:none;font-weight:800;padding:13px 20px;border-radius:999px;border:2px solid transparent}.btn.primary{background:#fff;color:var(--primary)}.btn.secondary{color:#fff;border-color:rgba(255,255,255,.7)}
+.section{padding:82px 0}.light{background:var(--light)}.section-header{max-width:780px;margin:0 auto 42px;text-align:center}.section-header h2{font-size:clamp(2rem,4vw,3rem);line-height:1.15;margin:0 0 14px}.section-header p,.card p{color:var(--muted)}
+.grid{display:grid;gap:24px}.three{grid-template-columns:repeat(3,1fr)}.four{grid-template-columns:repeat(4,1fr)}.card{background:#fff;border:1px solid var(--border);border-radius:20px;padding:26px;box-shadow:0 8px 24px rgba(13,59,102,.06)}.card h3{margin-top:0;color:var(--primary)}.icon{width:48px;height:48px;border-radius:16px;background:#e8f3f8;display:grid;place-items:center;font-size:1.45rem;margin-bottom:16px}
+.split{display:grid;grid-template-columns:.95fr 1.05fr;gap:46px;align-items:center}.visual-panel,.video-placeholder{min-height:340px;border-radius:28px;background:linear-gradient(135deg,rgba(13,59,102,.9),rgba(29,105,150,.75)),repeating-linear-gradient(90deg,rgba(255,255,255,.08) 0 1px,transparent 1px 48px),repeating-linear-gradient(0deg,rgba(255,255,255,.08) 0 1px,transparent 1px 48px);box-shadow:0 12px 30px rgba(13,59,102,.12);padding:32px;color:#fff;display:flex;flex-direction:column;justify-content:end}.video-placeholder{display:grid;place-items:center;text-align:center}.play{width:78px;height:78px;border-radius:50%;background:rgba(255,255,255,.18);display:grid;place-items:center;margin:0 auto 18px;font-size:2rem;border:1px solid rgba(255,255,255,.3)}
+.check-list{padding:0;list-style:none}.check-list li{margin:12px 0;padding-left:28px;position:relative}.check-list li:before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:900}.page-hero{background:linear-gradient(135deg,var(--dark),var(--accent));color:#fff;padding:74px 0}.page-hero h1{font-size:clamp(2.4rem,5vw,4rem);line-height:1.1;margin:0 0 16px}.page-hero p{max-width:760px;font-size:1.16rem}
+.contact-box{background:var(--primary);color:#fff;border-radius:24px;padding:34px}.contact-box a{color:#fff}.contact-form{display:grid;gap:14px}.contact-form input,.contact-form textarea{width:100%;padding:14px;border:1px solid var(--border);border-radius:12px;font:inherit}.contact-form button{padding:14px 18px;background:var(--primary);color:#fff;border:0;border-radius:999px;font-weight:800}.form-note{color:var(--muted);font-size:.92rem}.site-footer{background:#111923;color:#d8e1e8;padding:42px 0}.footer-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px}.site-footer a{color:#d8e1e8}.social-links{display:flex;gap:14px;flex-wrap:wrap}
+@media(max-width:900px){.hero-grid,.split,.footer-grid{grid-template-columns:1fr}.three,.four{grid-template-columns:1fr 1fr}.navbar{align-items:flex-start;flex-direction:column}}@media(max-width:600px){.three,.four{grid-template-columns:1fr}.hero,.section{padding:62px 0}}
