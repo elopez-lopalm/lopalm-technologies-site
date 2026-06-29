@@ -62,7 +62,7 @@
 
         <p>
           <strong>Email:</strong>
-          <a href="mailto:elopez@lopalm.com">elopez@lopalm.com</a>
+          <a href="mailto:info@lopalm.com">info@lopalm.com</a>
         </p>
 
         <p>
@@ -79,18 +79,29 @@
       <div>
         <h2>Send a Message</h2>
 
-        <form class="contact-form" action="#" method="post">
-          <input type="text" name="name" placeholder="Name" required>
-          <input type="email" name="email" placeholder="Email" required>
-          <input type="tel" name="phone" placeholder="Phone">
-          <input type="text" name="company" placeholder="Company">
+                        <form id="contact-form" class="contact-form" novalidate>
+          <div class="hp-field" aria-hidden="true">
+            <label for="company_url">Website</label>
+            <input
+              type="text"
+              id="company_url"
+              name="company_url"
+              tabindex="-1"
+              autocomplete="off"
+            >
+          </div>
+
+          <input type="text" name="name" placeholder="Name" autocomplete="name" required>
+          <input type="email" name="email" placeholder="Email" autocomplete="email" required>
+          <input type="tel" name="phone" placeholder="Phone" autocomplete="tel">
+          <input type="text" name="company" placeholder="Company" autocomplete="organization">
           <input type="text" name="subject" placeholder="Subject" required>
-          <textarea name="message" rows="6" placeholder="Message" required></textarea>
+          <textarea name="message" rows="6" placeholder="Message" maxlength="5000" required></textarea>
+
           <button type="submit">Submit</button>
 
-          <p class="form-note">
-            Note: This form is not connected yet. In Phase 3, we can connect it
-            to email, Google Sheets, or both using Cloudflare Pages Functions.
+          <p id="contact-status" class="form-note" role="status" aria-live="polite">
+            Fields marked as required must be completed before submitting.
           </p>
         </form>
       </div>
@@ -142,7 +153,7 @@
       <div class="footer-list">
         <span>301 S McDowell Street, Ste 125-2039</span>
         <span>Charlotte, NC 28204</span>
-        <a href="mailto:elopez@lopalm.com">elopez@lopalm.com</a>
+        <a href="mailto:info@lopalm.com">info@lopalm.com</a>
         <a href="tel:+19807853583">980-785-3583</a>
       </div>
     </div>
@@ -156,5 +167,111 @@
 
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>lucide.createIcons();</script>
+
+  <style>
+    .hp-field {
+      position: absolute;
+      left: -10000px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      opacity: 0;
+    }
+
+    .contact-form .is-invalid {
+      border-color: #b42318;
+      outline-color: #b42318;
+    }
+
+    .form-note.success {
+      color: #2f7d32;
+      font-weight: 700;
+    }
+
+    .form-note.error {
+      color: #b42318;
+      font-weight: 700;
+    }
+  </style>
+
+  <script>
+    const contactForm = document.getElementById("contact-form");
+    const contactStatus = document.getElementById("contact-status");
+
+    function setStatus(message, type = "") {
+      contactStatus.textContent = message;
+      contactStatus.className = "form-note" + (type ? " " + type : "");
+    }
+
+    function isValidEmail(email) {
+      return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email);
+    }
+
+    contactForm.addEventListener("submit", async function (event) {
+      event.preventDefault();
+
+      const formData = new FormData(contactForm);
+      const payload = Object.fromEntries(formData.entries());
+
+      contactForm
+        .querySelectorAll(".is-invalid")
+        .forEach((field) => field.classList.remove("is-invalid"));
+
+      const requiredFields = ["name", "email", "subject", "message"];
+      let hasError = false;
+
+      requiredFields.forEach((fieldName) => {
+        const field = contactForm.elements[fieldName];
+        if (!field.value.trim()) {
+          field.classList.add("is-invalid");
+          hasError = true;
+        }
+      });
+
+      if (payload.email && !isValidEmail(payload.email.trim())) {
+        contactForm.elements.email.classList.add("is-invalid");
+        hasError = true;
+      }
+
+      if (payload.message && payload.message.length > 5000) {
+        contactForm.elements.message.classList.add("is-invalid");
+        hasError = true;
+      }
+
+      if (hasError) {
+        setStatus("Please complete the required fields with a valid email address.", "error");
+        return;
+      }
+
+      setStatus("Sending message...");
+      const submitButton = contactForm.querySelector("button[type='submit']");
+      submitButton.disabled = true;
+
+      try {
+        const response = await fetch("/api/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(payload)
+        });
+
+        const result = await response.json().catch(() => ({}));
+
+        if (!response.ok || !result.ok) {
+          throw new Error(result.error || "Message could not be sent.");
+        }
+
+        contactForm.reset();
+        setStatus("Thank you. Your message has been sent.", "success");
+      } catch (error) {
+        setStatus("Sorry, your message could not be sent. Please try again or email info@lopalm.com.", "error");
+      } finally {
+        submitButton.disabled = false;
+      }
+    });
+  </script>
+
 </body>
 </html>
